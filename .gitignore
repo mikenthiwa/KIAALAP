@@ -1,0 +1,11 @@
+# environment variable
+.env
+
+#node modules
+node_modules
+
+#ide
+.idea/
+
+add.js
+consume.js
