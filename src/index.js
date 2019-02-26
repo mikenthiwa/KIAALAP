@@ -1,9 +1,15 @@
-import app from './app';
-import dotenv from 'dotenv';
-import env from '../src/config/enviroment'
+import debug from "debug";
+import app from "./app";
+import dotenv from "dotenv";
+import http from "http";
+import env from "../src/config/enviroment";
 
 dotenv.config();
 
+const logger = debug("log");
 const PORT = env.PORT;
+const server = http.createServer(app);
 
-app.listen(PORT, () => console.log(`server running on port ${PORT}`));
+server.listen(PORT, () => {
+  logger(`Find me on port on port ${PORT}`);
+});
