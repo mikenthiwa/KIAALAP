@@ -4,10 +4,9 @@ import morgan from "morgan";
 const app = express();
 app.use(morgan("dev"));
 
-app.get("/", (req, res) => {
-  res.status(200).send({
-    success: true,
-    message: "welcome"
+app.use("*", (req, res) => {
+  res.status(200).json({
+    message: "Not Found. Use /api/v1 to access the Api"
   });
 });
 
