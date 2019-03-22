@@ -1,7 +1,15 @@
 version: '3'
 services:
+  db:
+    image: postgres
   web:
     build: .
+    links:
+      - db
+    environment:
+      - PGHOST=db
+      - PGDATABASE=postgres
+      - PGUSER=postgres
     ports:
       - "5000:9001"
   redis:
