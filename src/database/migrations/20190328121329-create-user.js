@@ -11,8 +11,11 @@ module.exports = {
       username: {
         type: Sequelize.STRING
       },
-      emaill: {
+      email: {
         type: Sequelize.STRING
+      },
+      profileID: {
+        type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,
