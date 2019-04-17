@@ -8,7 +8,7 @@ export const facebookConfig = passport.use(
   new facebookStrategy({
     clientID: env.facebookVar.clientID,
     clientSecret: env.facebookVar.clientSecret,
-    callbackURL: "/facebook/callback",
+    callbackURL: "https://kialaap.herokuapp.com/facebook/callback",
     profileFields:["id","displayName","emails"],
   },
   async (accessToken, refreshToken, profile, cb) => {

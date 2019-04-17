@@ -18,8 +18,10 @@ deserializeUsers;
 
 const app = express();
 
-
-app.use(cors());
+const corsOptions = {
+  credentials: true,
+};
+app.use(cors(corsOptions));
 app.use(morgan("dev"));
 app.use(passport.initialize());
 app.use(passport.session());
